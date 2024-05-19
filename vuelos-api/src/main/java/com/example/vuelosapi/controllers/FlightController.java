@@ -1,7 +1,9 @@
 package com.example.vuelosapi.controllers;
 
 
+import com.example.vuelosapi.models.Dolar;
 import com.example.vuelosapi.models.Flight;
+import com.example.vuelosapi.models.FlightDTO;
 import com.example.vuelosapi.services.FlightService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +20,7 @@ public class FlightController {
 
     //TRAIGO TODOS LOS VUELOS
     @GetMapping("/allflights")
-    public List<Flight> getAllFlights(){
+    public List<FlightDTO> getAllFlights(){
         return flightService.getAllFlights();
     }
 
@@ -49,7 +51,7 @@ public class FlightController {
     //obtener ofertas
     @GetMapping("/offer")
     public List<Flight> getOffer(){
-        Integer offerPrice = 66000;
+        Integer offerPrice = 150;
         return flightService.getOffer(offerPrice);
     }
 
@@ -64,5 +66,16 @@ public class FlightController {
     public List<Flight> getByLocations(@RequestParam String origin, @RequestParam String destination){
         return flightService.getByOriginAndDestination(origin, destination);
     }
+
+    /*@GetMapping("/dollarprice")
+    public double getDollar(){
+        return flightService.getDollarPrice();
+    }*/
+
+    @GetMapping("/alldollars")
+    public List<Dolar> getAllDollars(){
+        return flightService.getAllDollars();
+    }
+
 
 }
