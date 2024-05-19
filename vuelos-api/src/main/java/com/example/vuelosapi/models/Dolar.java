@@ -14,7 +14,7 @@ public class Dolar {
     private double venta;
     private LocalDateTime fechaActualizacion;
 
-    public Double getAverage() {
+    public double getAverage() {
         return ((getCompra() + getVenta())/2);
     }
 }
