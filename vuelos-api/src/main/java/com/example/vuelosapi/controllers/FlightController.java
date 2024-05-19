@@ -51,7 +51,7 @@ public class FlightController {
     //obtener ofertas
     @GetMapping("/offer")
     public List<Flight> getOffer(){
-        Integer offerPrice = 660;
+        Integer offerPrice = 150;
         return flightService.getOffer(offerPrice);
     }
 

@@ -17,20 +17,25 @@ import java.util.stream.Collectors;
 public class FlightService {
     @Autowired
     private FlightRepository flightRepository;
-
     @Autowired
     private FlightUtils flightUtils;
-
     @Autowired
     private FlightConfiguration flightConfiguration;
 
-    //DEVUELVE EL CONVERTEDPRICE PERO ALGO SE ROMPE EN EL CALCULO DE PROMEDIO, EL PROMEDIO EN GETALLDOLLARS FUNCIONA OK
     public List<FlightDTO> getAllFlights(){
-        List<Flight> flightList = flightRepository.findAll();//vuelos de la BD
-        return  flightList.stream()//lista de vuelosDTO
-                .map(flight -> flightUtils.flightMapper(flight, getDollarPrice()))
-                .collect(Collectors.toList());//lo transformo en listaDTO
+        double getDollarPrice = getDollarPrice();
+        List<Flight> flights = flightRepository.findAll();
+        return flightUtils.flightListMapper(flights, getDollarPrice);
     }
+
+    /*public List<FlightDTO> getAllFlights(){
+        List<Flight> flightList = flightRepository.findAll();//vuelos de la BD
+        return flightList.stream()
+                .map(flight -> flightUtils.flightMapper(flight, getDollarPrice()))
+                .collect(Collectors.toList());
+        //lista de vuelosDTO
+        //lo transformo en listaDTO
+    }*/
 
     public void createFlight(Flight flight){
         flightRepository.save(flight);

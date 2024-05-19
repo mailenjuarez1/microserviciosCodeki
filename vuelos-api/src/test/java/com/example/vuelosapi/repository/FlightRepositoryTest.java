@@ -19,7 +19,6 @@ public class FlightRepositoryTest {
     @Autowired
     private FlightRepository flightRepository;
 
-
     private Flight flight;
 
     @BeforeEach
@@ -44,14 +43,12 @@ public class FlightRepositoryTest {
         assertThat(flightBD).isNotNull(); //verifica comportamiento
     }
 
-  /*  @Test
+ /* @Test
     void findAllFlightTest(){
        Flight flight1 = new Flight("BRA","ARG","15-005-24","16-05-24",40000,"Semanal");    //config previa
         flightRepository.save(flight);
         flightRepository.save(flight1);
-
         List<Flight> flightList = flightRepository.findAll();                              //funcionalidad
-
         assertThat(flightList).isNotNull();                                                //verifica comportamiento
         assertThat(flightList.size()).isEqualTo(2);
     }*/
