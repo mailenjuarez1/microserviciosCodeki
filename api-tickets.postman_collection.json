@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "366e7a4a-834e-457a-9d83-0366b0e2a308",
+		"name": "api-tickets",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22436095"
+	},
+	"item": [
+		{
+			"name": "create",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:60218/tickets/flights/1",
+					"host": [
+						"localhost"
+					],
+					"port": "60218",
+					"path": [
+						"tickets",
+						"flights",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "allflights",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:60348/tickets/flights/allflights",
+					"host": [
+						"localhost"
+					],
+					"port": "60348",
+					"path": [
+						"tickets",
+						"flights",
+						"allflights"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "by id",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:60218/tickets/create",
+					"host": [
+						"localhost"
+					],
+					"port": "60218",
+					"path": [
+						"tickets",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:61596/tickets/1",
+					"host": [
+						"localhost"
+					],
+					"port": "61596",
+					"path": [
+						"tickets",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:61596/tickets/all",
+					"host": [
+						"localhost"
+					],
+					"port": "61596",
+					"path": [
+						"tickets",
+						"all"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
