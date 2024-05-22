@@ -43,7 +43,7 @@ public class FlightRepositoryTest {
         assertThat(flightBD).isNotNull(); //verifica comportamiento
     }
 
- /* @Test
+   @Test
     void findAllFlightTest(){
        Flight flight1 = new Flight("BRA","ARG","15-005-24","16-05-24",40000,"Semanal");    //config previa
         flightRepository.save(flight);
@@ -51,5 +51,5 @@ public class FlightRepositoryTest {
         List<Flight> flightList = flightRepository.findAll();                              //funcionalidad
         assertThat(flightList).isNotNull();                                                //verifica comportamiento
         assertThat(flightList.size()).isEqualTo(2);
-    }*/
+    }
 }

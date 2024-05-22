@@ -1,9 +1,6 @@
 package com.example.vuelosapi.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -25,8 +22,11 @@ public class Flight {
    private String arrivalDateTime;
    private double price;
    private String frequency;
+   @ManyToOne
+   @JoinColumn(name = "company_id")
+   private Company company;
 
-   public Flight(String origin, String destination, String departureDateTime, String arrivalDateTime, double price, String frequency) {
+  public Flight(String origin, String destination, String departureDateTime, String arrivalDateTime, double price, String frequency) {
       this.origin = origin;
       this.destination = destination;
       this.departureDateTime = departureDateTime;
