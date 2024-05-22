@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 public class FlightService {
@@ -22,6 +21,8 @@ public class FlightService {
     @Autowired
     private FlightConfiguration flightConfiguration;
 
+
+    //lista de todos los vuelos con mapper
     public List<FlightDTO> getAllFlights(){
         double getDollarPrice = getDollarPrice();
         List<Flight> flights = flightRepository.findAll();
@@ -91,7 +92,7 @@ public class FlightService {
     }
 
     private double getDollarPrice() {
-        return flightConfiguration.fetchDolar().getAverage();
+        return flightUtils.fetchDolar().getAverage();
     }
 
     public List<Dolar> getAllDollars() {

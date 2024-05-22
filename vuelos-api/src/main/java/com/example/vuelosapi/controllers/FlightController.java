@@ -18,6 +18,8 @@ public class FlightController {
     @Autowired
     private FlightService flightService;
 
+
+
     //TRAIGO TODOS LOS VUELOS
     @GetMapping("/allflights")
     public List<FlightDTO> getAllFlights(){
